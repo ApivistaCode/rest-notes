@@ -68,6 +68,10 @@
 			bottom:0px;
 		}
 
+		.section {
+			text-align: left;
+		}
+
 			/* Overwriting styles for the navigation dots (to place it where we want)
 		* --------------------------------------- */
 		.fp-slidesNav.bottom{
@@ -129,7 +133,7 @@
 		* --------------------------------------- */
 		.cb-head {
 			text-align: left;
-			padding: 6% 0 0 6%;
+			padding: 6% 0% 0 6%;
 
 			font-family: 'Open Sans', sans-serif;
 			/*font-size: 1.5em;*/
@@ -143,12 +147,32 @@
 
 		.cb-main {
 			text-align: left;
-			padding: 6% 0 0 6%;
+			padding: 2% 6% 0 6%;
 
 			font-family: 'Rokkitt', serif;
 			/*font-size: 1.1em;*/
 			/*font-size: 18px;*/
 			font-size: 1.3em;
+		}
+
+		.toc-column {
+			float: left; 
+			margin-left: 15px;
+			padding-left: 15px; 
+			padding-top: 15px;
+			padding-bottom: 15px;
+			width: 25%; 
+			background: #EEEEEE;
+
+		}
+		blockquote {
+		background: #EEEEEE;
+		padding-left: 15px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		margin-top: 10px;
+		margin-bottom: 1px;
+		width: 75%;
 		}
 	</style>
 
@@ -166,6 +190,7 @@
     <li data-menuanchor="p4"><a href="#oas">OpenAPI Spec</a></li>
     <li data-menuanchor="p5"><a href="#management">Management</a></li>
     <li data-menuanchor="p5"><a href="#devrel">Developer Relations</a></li>
+    <li data-menuanchor="p5"><a href="#identity">Identity & Authorization</a></li>
     <li data-menuanchor="pX" class="menu-right"><a href="/">APIvista REST API Notes</a></li>
 </ul>
 </div>
@@ -176,11 +201,55 @@
 		    	<h1>Table of Contents</h1>
 		    </div>
 		    <div class="cb-main">
-		    	<h2>REST</h2>
+		    	<div style="clear: both;">
+		    	This site is a collection of links, facts, and opinions on the topic of building REST APIs. It is intended to be a pragmatic discussion guide and shared reference as we start new API services engagements and is by no means all-encompassing. It is updated as we learn things from research, as the industry evolves, and with each client interaction on the topic.<br />&nbsp;
+				</div>
+		    	<div class="toc-column">
+			    	<P>REST</p>
+			    	<ul>
+			    		<li><a href="#rest">Overview</a></li>
+			    		<li><a href="#rest/1">REST<i>ful</i></a></li>
+			    		<li><a href="#rest/2">Verbs</a></li>
+			    		<li><a href="#rest/2">Versioning</a></li>
+			    	</ul>
+			    	&nbsp;
+			    	<P>Design</p>
+			    	<ul>
+			    		<li><a href="#design">Design or Develop first?</a></li>
+			    		<li><a href="#design/1">Domain Driven Design</a></li>
+			    		<li><a href="#design/2">Bounded Contexts</a></li>
+			    		<li><a href="#design/3">Conway's Law</a></li>
+			    		<li><a href="#design/4">Specification/Modeling Formats</a></li>
+			    	</ul>
+		   		</div>
+		   		<div class="toc-column">
+		    	<P>OpenAPI Spec</p>
 		    	<ul>
-		    		<li><a href="#rest">Overview</a></li>
-		    		<li><a href="#rest/1">REST<i>ful</i></a></li>
+		    		<li><a href="#oas">OpenAPI Spec 2.0 (fka Swagger Spec)</a></li>
+		    		<li><a href="#oas/1">OAS Tooling: Write Specs</a></li>
+		    		<li><a href="#oas/2">OAS Tooling: Use Specs</a></li>
+		    		<li><a href="#oas/3">OAS 2.0 -> 3.0</a></li>
 		    	</ul>
+		    	&nbsp;
+		    	<P>Management</p>
+		    	<ul>
+		    		<li><a href="#management">API Management Solutions ("Gateways" & beyond)</a></li>
+		    		<li><a href="#management/1">xxx</a></li>
+		    		<li><a href="#management/2">xxx</a></li>
+		    		<li><a href="#management/3">xxx</a></li>
+		    		<li><a href="#management/4">xxx</a></li>
+		    	</ul>
+		    </div>
+		    <div class="toc-column">
+		    	<P>Developer Relations</p>
+		    	<ul>
+		    		<li>...</li>
+		    	</ul>
+		    	<P>Identity & Authorization</p>
+		    	<ul>
+		    		<li>...</li>
+		    	</ul>
+		    </div>
 		    </div>
 	</div>
 	
@@ -198,20 +267,84 @@
 		    	<h1>REST<i>ful</i></h1>
 		    </div>
 		    <div class="cb-main">
-			  bbb.222
+			  The term "RESTful" is often used when referring to REST APIs, because the ideals put forth in Fielding's dissertation are often challenging to implement in practice. RESTful can refer to embracing the core philosophies of REST while making concessions to the reality of competing demands in Enterprise IT & software development. 
+			  <br />&nbsp;
+			  <p>Particularly tricky areas include:</p>
+			  <ul>
+			  	<li>PUT & PATCH verbs</li>
+			  	<li>HTTP Response codes beyond a small set (200, 404, ...)</li>
+			  	<li>HATEOAS</li>
+			  </ul>
+
+		    </div>
+		</div>
+		<div class="slide">
+			<div class="cb-head">
+		    	<h1>Verbs</h1>
+		    </div>
+		    <div class="cb-main">
+			  <P>GET</p>
+			  <P>POST</p>
+			  <P>DELETE</p>
+			  <HR />
+			  <p>PATCH</p>
+			  <p>PUT</p>
+		    </div>
+		</div>
+		<div class="slide">
+			<div class="cb-head">
+		    	<h1>Versioning</h1>
+		    </div>
+		    <div class="cb-main">
+			  xxx
 		    </div>
 		</div>
 	</div>
 
 
 	<div class="section" id="section2">
-		<div class="cb-head">
-	    	<h1>CCC</h1>
-	    </div>
-	    <div class="cb-main">
-		  ccc
-
-	    </div>
+		<div class="slide">
+		    <div class="cb-head">
+		    	<h1>Design or Develop first?</h1>
+		    </div>
+		    <div class="cb-main">
+			  bbb
+		    </div>
+		</div>
+		<div class="slide">
+		    <div class="cb-head">
+		    	<h1>Domain Driven Design</h1>
+		    </div>
+		    <div class="cb-main">
+			  bbb
+		    </div>
+		</div>
+		<div class="slide">
+		    <div class="cb-head">
+		    	<h1>Bounded Contexts</h1>
+		    </div>
+		    <div class="cb-main">
+		      from one thing
+			  <blockquote>hello world</blockquote>
+			  to another
+		    </div>
+		</div>
+		<div class="slide">
+		    <div class="cb-head">
+		    	<h1>Conway's Law</h1>
+		    </div>
+		    <div class="cb-main">
+			  bbb
+		    </div>
+		</div>
+		<div class="slide">
+		    <div class="cb-head">
+		    	<h1>Specification/Modeling Formats</h1>
+		    </div>
+		    <div class="cb-main">
+			  bbb
+		    </div>
+		</div>
 
 	</div>
 	<div class="section" id="section3">
