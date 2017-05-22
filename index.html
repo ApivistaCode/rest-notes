@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>APIvista REST API Notes</title>
+	<meta name="author" content="Chris Busse" />
+	<meta name="description" content="fullPage very simple demo." />
+	<meta name="keywords"  content="fullpage,jquery,demo,simple" />
+	<meta name="Resource-type" content="Document" />
+
+
+	<link rel="stylesheet" type="text/css" href="/css/jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="/css/examples.css" />
+	<link href='http://fonts.googleapis.com/css?family=Rokkitt:400,700|Open+Sans:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+	<script type="text/javascript" src="/js/scrolloverflow.js"></script>
+
+	<script type="text/javascript" src="/js/jquery.fullPage.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				sectionsColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
+				anchors: ['toc', 'rest', 'design', 'oas', 'management', 'devrel'],
+            	menu: '#menu'
+			});
+		});
+	</script>
+
+	<style>
+		.fp-tableCell {
+			vertical-align: top;
+		}
+			/* Backgrounds will cover all the section
+		* --------------------------------------- */
+		#section0,
+		#section1,
+		#section2,
+		#section3,
+		#section4{
+		    background-size: cover;
+		}
+
+		/* Defining each sectino background and styles 
+		* --------------------------------------- */
+		#section0{
+		    /* background-image: url(/images/aaa.png); */
+		    padding: 0 0 0 0;
+		}
+		#section2{
+		    /* background-image: url(/images/bbb.jpg); */
+		    padding: 0 0 0 0;
+		}
+		#section3{
+		    /* background-image: url(/images/ccc.jpg); */
+		    padding: 0 0 0 0;
+		}
+		#section4{
+		    /* background-image: url(/images/ddd.png); */
+		    padding: 0 0 0 0;
+		}
+
+		#section3 h1{
+		    color: #000;
+		}
+
+
+		/*Adding background for the slides
+		* --------------------------------------- */
+		#slide1{
+		    background-image: url(imgs/bg2.jpg);
+		    padding: 6% 0 0 0;
+		}
+		#slide2{
+		    background-image: url(imgs/bg5.jpg);
+		    padding: 6% 0 0 0;
+		}
+
+		/*CB specific
+		* --------------------------------------- */
+		.cb-head {
+			text-align: left;
+			padding: 6% 0 0 6%;
+
+			font-family: 'Open Sans', sans-serif;
+			/*font-size: 1.5em;*/
+			/*font-size: 24px;*/
+			font-weight: bold;
+
+		}
+		.cb-head h1 {
+			font-size: 3em;
+		}
+
+		.cb-main {
+			text-align: left;
+			padding: 6% 0 0 6%;
+
+			font-family: 'Rokkitt', serif;
+			/*font-size: 1.1em;*/
+			/*font-size: 18px;*/
+			font-size: 1.3em;
+		}
+	</style>
+
+</head>
+<body>
+<ul id="menu">
+    <li data-menuanchor="p1" class="active"><a href="#toc">TOC</a></li>
+    <li data-menuanchor="p2"><a href="#rest">REST</a></li>
+    <li data-menuanchor="p3"><a href="#design">Design</a></li>
+    <li data-menuanchor="p4"><a href="#oas">OpenAPI Spec</a></li>
+    <li data-menuanchor="p5"><a href="#management">Management</a></li>
+    <li data-menuanchor="p5"><a href="#devrel">Developer Relations</a></li>
+</ul>
+<div id="fullpage">
+	<div class="section" id="section0">
+		<div class="cb-head">
+	    	<h1>AAA</h1>
+	    </div>
+	    <div class="cb-main">
+	    	aaa
+	    </div>
+
+	</div>
+	<div class="section" id="section1">
+	    <div class="cb-head">
+	    	<h1>BBB</h1>
+	    </div>
+	    <div class="cb-main">
+		  bbb
+	    </div>
+	</div>
+	<div class="section" id="section2">
+		<div class="cb-head">
+	    	<h1>CCC</h1>
+	    </div>
+	    <div class="cb-main">
+		  ccc
+
+	    </div>
+
+	</div>
+	<div class="section" id="section3">
+		<div class="cb-head">
+	    	<h1>DDD</h1>
+	    </div>
+	    <div class="cb-main">
+		  ddd
+	    </div>
+
+	</div>
+	<div class="section" id="section4">
+		<div class="cb-head">
+	    	<h1>EEE</h1>
+	    </div>
+	    <div class="cb-main">
+		   eee
+	    </div>
+	</div>
+	<div class="section" id="section4">
+		<div class="cb-head">
+	    	<h1>FFF</h1>
+	    </div>
+	    <div class="cb-main">
+		   fff
+	    </div>
+	</div>
+	<!--
+	<div class="section" id="section1">
+	    <div class="slide"><h1>work</h1></div>
+	    <div class="slide"><h1>Only text</h1></div>
+	    <div class="slide"><h1>And text</h1></div>
+	    <div class="slide"><h1>And more text</h1></div>
+	</div>
+	-->
+</div>
+
+</body>
+</html>
