@@ -26,12 +26,57 @@
 			$('#fullpage').fullpage({
 				sectionsColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
 				anchors: ['toc', 'rest', 'design', 'oas', 'management', 'devrel'],
-            	menu: '#menu'
+            	menu: '#menu',
+            	slidesNavigation: true,
+            	scrollHorizontally: true
 			});
 		});
 	</script>
 
 	<style>
+		#menu {
+			background-color: #a5c349;
+		}
+		.menu-right {
+			float: right;
+		}
+		/*
+		.fp-controlArrow {
+			border-left-color: #a5c349;
+
+		}
+		*/
+
+		/* Fixed header and footer.
+		* --------------------------------------- */
+		#header, #footer{
+			position:fixed;
+			height: 20px;
+			display:block;
+			width: 100%;
+			background: #a5c349;
+			z-index:9;
+			text-align:left;
+			color: #f2f2f2;
+			padding: 5px 5px 5px 5px;
+		}
+
+		#header{
+			top:0px;
+		}
+		#footer{
+			bottom:0px;
+		}
+
+			/* Overwriting styles for the navigation dots (to place it where we want)
+		* --------------------------------------- */
+		.fp-slidesNav.bottom{
+			bottom: 50px;
+		}
+
+
+
+
 		.fp-tableCell {
 			vertical-align: top;
 		}
@@ -109,6 +154,11 @@
 
 </head>
 <body>
+
+
+<div id="footer">apivistacode.github.io/rest-notes | View Repo on GitHub</div>
+
+<div>
 <ul id="menu">
     <li data-menuanchor="p1" class="active"><a href="#toc">TOC</a></li>
     <li data-menuanchor="p2"><a href="#rest">REST</a></li>
@@ -116,25 +166,44 @@
     <li data-menuanchor="p4"><a href="#oas">OpenAPI Spec</a></li>
     <li data-menuanchor="p5"><a href="#management">Management</a></li>
     <li data-menuanchor="p5"><a href="#devrel">Developer Relations</a></li>
+    <li data-menuanchor="pX" class="menu-right"><a href="/">APIvista REST API Notes</a></li>
 </ul>
+</div>
 <div id="fullpage">
 	<div class="section" id="section0">
-		<div class="cb-head">
-	    	<h1>AAA</h1>
-	    </div>
-	    <div class="cb-main">
-	    	aaa
-	    </div>
-
+		
+			<div class="cb-head">
+		    	<h1>Table of Contents</h1>
+		    </div>
+		    <div class="cb-main">
+		    	<h2>REST</h2>
+		    	<ul>
+		    		<li><a href="#rest">Overview</a></li>
+		    		<li><a href="#rest/1">REST<i>ful</i></a></li>
+		    	</ul>
+		    </div>
 	</div>
+	
 	<div class="section" id="section1">
-	    <div class="cb-head">
-	    	<h1>BBB</h1>
-	    </div>
-	    <div class="cb-main">
-		  bbb
-	    </div>
+		<div class="slide">
+		    <div class="cb-head">
+		    	<h1>REST</h1>
+		    </div>
+		    <div class="cb-main">
+			  bbb
+		    </div>
+		</div>
+		<div class="slide">
+			<div class="cb-head">
+		    	<h1>REST<i>ful</i></h1>
+		    </div>
+		    <div class="cb-main">
+			  bbb.222
+		    </div>
+		</div>
 	</div>
+
+
 	<div class="section" id="section2">
 		<div class="cb-head">
 	    	<h1>CCC</h1>
