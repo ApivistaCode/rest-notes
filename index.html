@@ -25,7 +25,7 @@
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
 				sectionsColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-				anchors: ['toc', 'rest', 'design', 'oas', 'management', 'devrel'],
+				anchors: ['toc', 'rest', 'design', 'oas'],
             	menu: '#menu',
             	slidesNavigation: true,
             	scrollHorizontally: true
@@ -189,8 +189,10 @@
     <li data-menuanchor="p3"><a href="#design">Design</a></li>
     <li data-menuanchor="p4"><a href="#oas">OpenAPI Spec</a></li>
     <li data-menuanchor="p5"><a href="#management">Management</a></li>
+    <!--
     <li data-menuanchor="p5"><a href="#devrel">Developer Relations</a></li>
     <li data-menuanchor="p5"><a href="#identity">Identity & Authorization</a></li>
+-->
     <li data-menuanchor="pX" class="menu-right"><a href="/">APIvista REST API Notes</a></li>
 </ul>
 </div>
@@ -234,10 +236,7 @@
 		    	<P>Management</p>
 		    	<ul>
 		    		<li><a href="#management">API Management Solutions ("Gateways" & beyond)</a></li>
-		    		<li><a href="#management/1">xxx</a></li>
-		    		<li><a href="#management/2">xxx</a></li>
-		    		<li><a href="#management/3">xxx</a></li>
-		    		<li><a href="#management/4">xxx</a></li>
+		    		<li><a href="#management/1">Orchestration / Transformation / Mediation</a></li>
 		    	</ul>
 		    </div>
 		    <div class="toc-column">
@@ -269,12 +268,15 @@
 		    <div class="cb-main">
 			  The term "RESTful" is often used when referring to REST APIs, because the ideals put forth in Fielding's dissertation are often challenging to implement in practice. RESTful can refer to embracing the core philosophies of REST while making concessions to the reality of competing demands in Enterprise IT & software development. 
 			  <br />&nbsp;
+			  <p>Treating the developers using your APIs as your customers - and treating them just like the customers of any other app or service you'd publish - will go a long way to making a successful API program<br>&nbsp;</p>
+			  <!--
 			  <p>Particularly tricky areas include:</p>
 			  <ul>
-			  	<li>PUT & PATCH verbs</li>
-			  	<li>HTTP Response codes beyond a small set (200, 404, ...)</li>
-			  	<li>HATEOAS</li>
+			  	<li>• PUT & PATCH verbs</li>
+			  	<li>• HTTP Response codes beyond a small set (200, 404, ...)</li>
+			  	<li>• Deep HATEOAS</li>
 			  </ul>
+			-->
 
 		    </div>
 		</div>
@@ -348,12 +350,54 @@
 
 	</div>
 	<div class="section" id="section3">
-		<div class="cb-head">
-	    	<h1>DDD</h1>
-	    </div>
-	    <div class="cb-main">
-		  ddd
-	    </div>
+		<!-- OAS -->
+		<div class="slide">
+			<div class="cb-head">
+		    	<h1>OpenAPI Spec 2.0 (fka Swagger Spec)</h1>
+		    </div>
+		    <div class="cb-main">
+			  <blockquote>
+			  	The Open API Initiative (OAI) was created by a consortium of forward-looking industry experts who recognize the immense value of standardizing on how REST APIs are described. As an open governance structure under the Linux Foundation, the OAI is focused on creating, evolving and promoting a vendor neutral description format.
+			  	<br>&nbsp;<br>
+			  	- <a href="https://www.openapis.org/about">https://www.openapis.org/about</a>
+			  </blockquote>
+			  <br>&nbsp;
+			  <p>GitHub: <a href="https://github.com/OAI/OpenAPI-Specification/blob/master/versions/2.0.md">OAI / OpenAPI-Specification 2.0</a><br>&nbsp;</p>
+			  <p>Example Spec: <a href="http://petstore.swagger.io/">Swagger PetStore</a><br>&nbsp;</p>
+			  <p>APIvista Example Spec: Vandelay Industries: <a href="https://github.com/ApivistaCode/VandelayIndustriesAPI/blob/master/swagger.yaml">YAML</a> | <a href="https://apivistacode.github.io/VandelayIndustriesAPI/">HTML</a> | <a href="https://apivistacode.github.io/VandelayIndustriesAPI/redoc.html">RecDoc</a></p>
+		    </div>
+		</div>
+		<div class="slide">
+			<div class="cb-head">
+		    	<h1>OAS Tooling: Write Specs</h1>
+		    </div>
+		    <div class="cb-main">
+			  <p>Swagger Editor: <a href="https://editor.swagger.io">editor.swagger.io</a><br>&nbsp;</p>
+		      <p>Swagger Editor: <a href="https://github.com/swagger-api/swagger-editor/#running-locally">Running Locally</a><br>&nbsp;</p>
+
+			  <p>API Handyman: <a href="https://apihandyman.io/writing-openapi-swagger-specification-tutorial-part-1-introduction/">Writing OpenAPI (Swagger) Specification Tutorial</a></p>	
+
+		    </div>
+		</div>
+		<div class="slide">
+			<div class="cb-head">
+		    	<h1>OAS Tooling: Use Specs</h1>
+		    </div>
+		    <div class="cb-main">
+			  <p>Swagger Editor: <a href="https://editor.swagger.io">Client / Server / Doc gen</a><br>&nbsp;</p>
+			  <p>Swagger UI: <a href="http://swagger.io/swagger-ui/">http://swagger.io/swagger-ui/</a><br>&nbsp;</p>
+			  <p>Swagger: <a href="http://swagger.io/open-source-integrations/">Open Source Implementations</a><br>&nbsp;</p>
+			  <p>3scale: <a href="https://www.3scale.net/api-management/interactive-api-documentation/">ActiveDocs</a><br>...any API Management Solution worth its salt will support Swagger<br>&nbsp;</p>
+		    </div>
+		</div>
+		<div class="slide">
+			<div class="cb-head">
+		    	<h1>OAS 2.0 -> 3.0</h1>
+		    </div>
+		    <div class="cb-main">
+			  <p>API Evangelist: <a href="http://apievangelist.com/2017/01/25/the-openapi-specification-version-30-highlights/">OpenAPI Specification 3.0 Highlights</a><br>&nbsp;</p>
+		    </div>
+		</div>
 
 	</div>
 	<div class="section" id="section4">
